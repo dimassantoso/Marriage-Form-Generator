@@ -2,42 +2,33 @@
 				<h5 class="ui horizontal divider">Data Pribadi</h5>
 				<div class="field">
 					<label>Nomor Kartu Tanda Penduduk</label>
-					<input type="text" name="wanita.ktp" placeholder="Nomor Kartu Tanda Penduduk">
+					<input type="text" name="wanita-ktp" placeholder="Nomor Kartu Tanda Penduduk">
 				</div>
 				<div class="field">
 					<label>Nama</label>
-					<input type="text" name="wanita.nama" placeholder="Nama">
+					<input type="text" name="wanita-nama" placeholder="Nama">
 				</div>
 				<div class="fields">
 					<div class="four wide field">
 						<label>Tempat Lahir</label>
-						<input type="text" name="wanita.tmp_lahir" placeholder="Tempat Lahir">
+						<input type="text" name="wanita-tmp_lahir" placeholder="Tempat Lahir">
 					</div>
 					<div class="twelve wide field ui calender" id="datepicker2">
 						<label>Tanggal Lahir</label>
-						<input type="text" name="wanita.tgl_lahir" placeholder="Tanggal Lahir">
+						<input type="text" name="wanita-tgl_lahir" placeholder="Tanggal Lahir">
 					</div>
 				</div>
 				<div class="field">
-					<label for="wanita.kewarganegaraan">Kewarganegaraan</label>
-					<div class="inline fields">
-					    <div class="field">
-					    	<div class="ui radio checkbox">
-					    		<input type="radio" name="wanita.wni" checked="" tabindex="0" class="hidden">
-					    		<label for="wni">Warga Negara Indonesia</label>
-					    	</div>
-					    </div>
-					    <div class="field">
-					    	<div class="ui radio checkbox">
-					    		<input type="radio" name="wanita.wna" tabindex="0" class="hidden">
-					    		<label for="wna">Warga Negara Asing</label>
-					    	</div>
-					    </div>
-					</div>
+					<label>Kewarganegaraan</label>
+					<select class="ui search dropdown" name="wanita-wn" id="wanita-pilih-wn">
+						<option value="">Kewarganegaraan</option>
+						<option value="id">Indonesia</option>
+					   	<option value="asing">Asing</option>
+					</select>
 				</div>
-				<div class="field">
-					<label for="wna.negara">Negara (Jika Warga Negara Asing)</label>
-				    <select class="ui search dropdown" name="wanita.wna.negara">
+				<div class="field" id="wanita-asing">
+					<label for="wna-negara">Negara (Jika Warga Negara Asing)</label>
+				    <select class="ui search dropdown" name="wanita-wna-negara">
 				      <option value="">Pilih Negara</option>
 				      <option value="AF">Afghanistan</option>
 				      <option value="AX">Åland Islands</option>
@@ -291,11 +282,11 @@
 				</div>
 				<div class="field">
 					<label>Suku Bangsa</label>
-					<input type="text" name="wanita.suku" placeholder="Suku Bangsa">
+					<input type="text" name="wanita-suku" placeholder="Suku Bangsa">
 				</div>
 				<div class="field">
 					<label>Agama</label>
-					<select class="ui search dropdown" name="wanita.agama">
+					<select class="ui search dropdown" name="wanita-agama" id="wanita-pilih-agama">
 						<option value="">Pilih Agama</option>
 						<option value="islam">Islam</option>
 				    	<option value="protestan">Protestan</option>
@@ -306,69 +297,36 @@
 				      	<option value="kepercayaan">Penghayat Kepercayaan</option>
 					</select>
 				</div>
-				<div class="field">
+				<div class="field" id="wanita-kepercayaan">
 					<label>Nama Penghayat Kepercayaan</label>
-					<input type="text" name="wanita.kepercayaan" placeholder="Nama Penghayat Kepercayaan">
+					<input type="text" name="wanita-kepercayaan" placeholder="Nama Penghayat Kepercayaan">
 				</div>
 				<div class="field">
-					<label for="wanita.pendidikan.terakhir">Pendidikan Terakhir</label>
-					<div class="inline fields">
-					    <div class="field">
-					    	<div class="ui radio checkbox">
-					    		<input type="radio" name="wanita.pendidikan.sd" checked="" tabindex="0" class="hidden">
-					    		<label>SD</label>
-					    	</div>
-					    </div>
-					    <div class="field">
-					    	<div class="ui radio checkbox">
-					    		<input type="radio" name="wanita.pendidikan.smp" tabindex="0" class="hidden">
-					    		<label>SMP</label>
-					    	</div>
-					    </div>
-					    <div class="field">
-					    	<div class="ui radio checkbox">
-					    		<input type="radio" name="wanita.pendidikan.sma" tabindex="0" class="hidden">
-					    		<label>SMA</label>
-					    	</div>
-					    </div>
-					    <div class="field">
-					    	<div class="ui radio checkbox">
-					    		<input type="radio" name="wanita.pendidikan.pt" tabindex="0" class="hidden">
-					    		<label>Penguruan Tinggi</label>
-					    	</div>
-					    </div>
-					</div>
+					<label>Pendidikan Terakhir</label>
+					<select class="ui search dropdown" name="wanita-pendidikan" id="wanita-pilih-agama">
+						<option value="">Pendidikan Terakhir</option>
+						<option value="sd">SD</option>
+					   	<option value="smp">SMP</option>
+					   	<option value="sma">SMA</option>
+					   	<option value="pt">Penguruan Tinggi</option>
+					</select>
 				</div>
 				<div class="field">
 					<label>Tempat tinggal</label>
-					<textarea rows="2" name="wanita.tmp_tinggal"></textarea>
+					<textarea rows="2" name="wanita-tmp_tinggal"></textarea>
 				</div>
-				<div class="field">
-					<label for="wanita.status">Status Perkawinan</label>
-					<div class="inline fields">
-						<div class="field">
-					    	<div class="ui radio checkbox">
-					    		<input type="radio" name="wanita.status.perawan" checked="" tabindex="0" class="hidden">
-					    		<label>Perawan</label>
-					    	</div>
-					    </div>
-					    <div class="field">
-					    	<div class="ui radio checkbox">
-					    		<input type="radio" name="wanita.status.janda" tabindex="0" class="hidden">
-					    		<label>Janda</label>
-					    	</div>
-					    </div>
+				<div class="field" id="wanita-status">
+					<label>Status Perkawinan</label>
+					<select class="ui search dropdown" name="wanita-status">
+						<option value="">Status Perkawinan</option>
+						<option value="perawan">Perawan</option>
+				    	<option value="janda">Janda</option>
+				    </select>
+				</div>
+				<div id="wanita-mantan">
+					<h5 class="ui horizontal divider">Data Suami Terdahulu</h5>
+					<div class="field">
+						<label>Nama Suami Terdahulu (Jika Janda)</label>
+						<input type="text" name="suami-terdahulu" placeholder="Nama Suami Terdahulu">
 					</div>
-				</div>
-				<h5 class="ui horizontal divider">Data Suami Terdahulu</h5>
-				<div class="field">
-					<label>Nama Suami Terdahulu (Jika Janda)</label>
-					<input type="text" name="suami.terdahulu" placeholder="Nama Suami Terdahulu">
-				</div>
-				<!-- <div class="ui button" tabindex="0">
-				Tambah</div> -->
-				<h5 class="ui horizontal divider">Data anak yang akan disahkan</h5>
-				<div class="field">
-					<label>Nama Anak</label>
-					<input type="text" name="wanita.suku" placeholder="Nama Anak">
 				</div>

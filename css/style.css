@@ -1,0 +1,27 @@
+body {
+	padding: 10px;
+}
+.in, .out {
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 500ms !important;
+}
+
+#data-mempelai{
+    display: block;
+}
+
+#data-ortu-mempelai{
+    display: none;
+}
+
+#data-saksi{
+    display:none;
+}
+
+#data-lain{
+	display:none;
+}
+#selesai{
+	display:none;
+}
+

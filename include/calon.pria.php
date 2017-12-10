@@ -2,42 +2,33 @@
 					<h5 class="ui horizontal divider">Data Pribadi</h5>	
 					<div class="field">
 						<label>Nomor Kartu Tanda Penduduk</label>
-						<input type="text" name="pria.ktp" placeholder="Nomor Kartu Tanda Penduduk">
+						<input type="text" name="pria-ktp" placeholder="Nomor Kartu Tanda Penduduk">
 					</div>
 					<div class="field">
 						<label>Nama</label>
-						<input type="text" name="pria.nama" placeholder="Nama">
+						<input type="text" name="pria-nama" placeholder="Nama">
 					</div>
 					<div class="fields">
 						<div class="four wide field">
 							<label>Tempat Lahir</label>
-							<input type="text" name="pria.tmp_lahir" placeholder="Tempat Lahir">
+							<input type="text" name="pria-tmp_lahir" placeholder="Tempat Lahir">
 						</div>
 						<div class="twelve wide field ui calender" id="datepicker1">
 							<label>Tanggal Lahir</label>
-							<input type="text" name="pria.tgl_lahir" placeholder="Tanggal Lahir">
+							<input type="text" name="pria-tgl_lahir" placeholder="Tanggal Lahir">
 						</div>
 					</div>
 					<div class="field">
-						<label for="pria.kewarganegaraan">Kewarganegaraan</label>
-						<div class="inline fields">
-						    <div class="field">
-						    	<div class="ui radio checkbox">
-						    		<input type="radio" name="pria.wni" checked="" tabindex="0" class="hidden">
-						    		<label for="wni">Warga Negara Indonesia</label>
-						    	</div>
-						    </div>
-						    <div class="field">
-						    	<div class="ui radio checkbox">
-						    		<input type="radio" name="pria.wna" tabindex="0" class="hidden">
-						    		<label for="wna">Warga Negara Asing</label>
-						    	</div>
-						    </div>
-						</div>
+						<label>Kewarganegaraan</label>
+						<select class="ui search dropdown" name="pria-wn" id="pria-pilih-wn">
+							<option value="">Kewarganegaraan</option>
+							<option value="id">Indonesia</option>
+					    	<option value="asing">Asing</option>
+					  	</select>
 					</div>
-					<div class="field">
-						<label for="wna.negara">Negara (Jika Warga Negara Asing)</label>
-					    <select class="ui search dropdown" name="pria.wna.negara">
+					<div class="field" id="pria-asing">
+						<label for="wna-negara">Negara (Jika Warga Negara Asing)</label>
+					    <select class="ui search dropdown" name="pria-wna-negara">
 					      <option value="">Pilih Negara</option>
 					      <option value="AF">Afghanistan</option>
 					      <option value="AX">Åland Islands</option>
@@ -291,12 +282,12 @@
 					</div>
 					<div class="field">
 						<label>Suku Bangsa</label>
-						<input type="text" name="pria.suku" placeholder="Suku Bangsa">
+						<input type="text" name="pria-suku" placeholder="Suku Bangsa">
 					</div>
 					<div class="field">
 						<label>Agama</label>
-						<select class="ui search dropdown" name="pria.agama">
-							<option value="">Pilih Agama</option>
+						<select class="ui search dropdown" name="pria-agama" id="pria-pilih-agama">
+							<option value="">Agama</option>
 							<option value="islam">Islam</option>
 					    	<option value="protestan">Protestan</option>
 					      	<option value="katolik">Katolik</option>
@@ -306,78 +297,44 @@
 					      	<option value="kepercayaan">Penghayat Kepercayaan</option>
 						</select>
 					</div>
-					<div class="field">
+					<div class="field" id="pria-kepercayaan">
 						<label>Nama Penghayat Kepercayaan</label>
-						<input type="text" name="pria.kepercayaan" placeholder="Nama Penghayat Kepercayaan">
+						<input type="text" name="pria-kepercayaan" placeholder="Nama Penghayat Kepercayaan">
 					</div>
 					<div class="field">
-						<label for="pria.pendidikan.terakhir">Pendidikan Terakhir</label>
-						<div class="inline fields">
-						    <div class="field">
-						    	<div class="ui radio checkbox">
-						    		<input type="radio" name="pria.pendidikan.sd" checked="" tabindex="0" class="hidden">
-						    		<label>SD</label>
-						    	</div>
-						    </div>
-						    <div class="field">
-						    	<div class="ui radio checkbox">
-						    		<input type="radio" name="pria.pendidikan.smp" tabindex="0" class="hidden">
-						    		<label>SMP</label>
-						    	</div>
-						    </div>
-						    <div class="field">
-						    	<div class="ui radio checkbox">
-						    		<input type="radio" name="pria.pendidikan.sma" tabindex="0" class="hidden">
-						    		<label>SMA</label>
-						    	</div>
-						    </div>
-						    <div class="field">
-						    	<div class="ui radio checkbox">
-						    		<input type="radio" name="pria.pendidikan.pt" tabindex="0" class="hidden">
-						    		<label>Penguruan Tinggi</label>
-						    	</div>
-						    </div>
-						</div>
+						<label>Pendidikan Terakhir</label>
+						<select class="ui search dropdown" name="pria-pendidikan">
+							<option value="">Pendidikan Terakhir</option>
+							<option value="sd">SD</option>
+					    	<option value="smp">SMP</option>
+					      	<option value="sma">SMA</option>
+					      	<option value="pt">Penguruan Tinggi</option>
+					  	</select>
 					</div>
 					<div class="field">
 						<label>Tempat tinggal</label>
-						<textarea rows="2" name="pria.tmp_tinggal"></textarea>
+						<textarea rows="2" name="pria-tmp_tinggal"></textarea>
 					</div>
-					<div class="field">
-						<label for="pria.status">Status Perkawinan</label>
-						<div class="inline fields">
-							<div class="field">
-						    	<div class="ui radio checkbox">
-						    		<input type="radio" name="pria.status.jejaka" checked="" tabindex="0" class="hidden">
-						    		<label>Jejaka</label>
-						    	</div>
-						    </div>
-						    <div class="field">
-						    	<div class="ui radio checkbox">
-						    		<input type="radio" name="pria.status.duda" tabindex="0" class="hidden">
-						    		<label>Duda</label>
-						    	</div>
-						    </div>
-						    <div class="field">
-						    	<div class="ui radio checkbox">
-						    		<input type="radio" name="pria.status.beristri" tabindex="0" class="hidden">
-						    		<label>Beristri</label>
-						    	</div>
-						    </div>
+					<div class="field" id="pria-status">
+						<label>Status Perkawinan</label>
+						<select class="ui search dropdown" name="pria-status">
+							<option value="">Status Perkawinan</option>
+							<option value="jejaka">Jejaka</option>
+					    	<option value="duda">Duda</option>
+					      	<option value="beristri">Beristri</option>
+					  	</select>
+					</div>
+					<div id="pria-mantan">
+						<h5 class="ui horizontal divider">Data Istri Terdahulu</h5>
+						<div class="field">
+							<label>Nama Istri Terdahulu (Jika Duda)</label>
+							<input type="text" name="istri-terdahulu" placeholder="Nama Istri Terdahulu">
 						</div>
 					</div>
-					<h5 class="ui horizontal divider">Data Istri Terdahulu</h5>
-					<div class="field">
-						<label>Nama Istri Terdahulu (Jika Duda)</label>
-						<input type="text" name="istri.terdahulu" placeholder="Nama Istri Terdahulu">
-					</div>
-					<div class="ui horizontal divider">Jumlah Istri</div>
-					<div class="field">
-						<label>Jumlah Istri (Jika Sedang Beristri)</label>
-						<input type="text" name="pria.jml.istri" placeholder="Jumlah Istri">
-					</div>
-					<h5 class="ui horizontal divider">Data anak yang akan disahkan</h5>
-					<div class="field">
-						<label>Nama Anak</label>
-						<input type="text" name="pria.anak" placeholder="Nama Anak">
+					<div id="pria-istri">
+						<div class="ui horizontal divider">Jumlah Istri</div>
+						<div class="field">
+							<label>Jumlah Istri (Jika Sedang Beristri)</label>
+							<input type="text" name="pria-jml_istri" placeholder="Jumlah Istri">
+						</div>
 					</div>

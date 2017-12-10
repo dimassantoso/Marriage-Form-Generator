@@ -2,42 +2,33 @@
 				<h5 class="ui horizontal divider">Data Ayah Mempelai Wanita</h5>
 				<div class="field">
 					<label>Nomor Kartu Tanda Penduduk</label>
-					<input type="text" name="wanita.ktp" placeholder="Nomor Kartu Tanda Penduduk">
+					<input type="text" name="ayah-wanita-ktp" placeholder="Nomor Kartu Tanda Penduduk">
 				</div>
 				<div class="field">
 					<label>Nama</label>
-					<input type="text" name="wanita.nama" placeholder="Nama">
+					<input type="text" name="ayah-wanita-nama" placeholder="Nama">
 				</div>
 				<div class="fields">
 					<div class="four wide field">
 						<label>Tempat Lahir</label>
-						<input type="text" name="wanita.tmp_lahir" placeholder="Tempat Lahir">
+						<input type="text" name="ayah-wanita-tmp_lahir" placeholder="Tempat Lahir">
 					</div>
 					<div class="twelve wide field ui calender" id="datepicker5">
 						<label>Tanggal Lahir</label>
-						<input type="text" name="wanita.tgl_lahir" placeholder="Tanggal Lahir">
+						<input type="text" name="ayah-wanita-tgl_lahir" placeholder="Tanggal Lahir">
 					</div>
 				</div>
 				<div class="field">
-					<label for="wanita.kewarganegaraan">Kewarganegaraan</label>
-					<div class="inline fields">
-					    <div class="field">
-					    	<div class="ui radio checkbox">
-					    		<input type="radio" name="wanita.wni" checked="" tabindex="0" class="hidden">
-					    		<label for="wni">Warga Negara Indonesia</label>
-					    	</div>
-					    </div>
-					    <div class="field">
-					    	<div class="ui radio checkbox">
-					    		<input type="radio" name="wanita.wna" tabindex="0" class="hidden">
-					    		<label for="wna">Warga Negara Asing</label>
-					    	</div>
-					    </div>
-					</div>
+					<label>Kewarganegaraan</label>
+					<select class="ui search dropdown" name="ayah-wanita-wn" id="ayah-wanita-pilih-wn">
+						<option value="">Kewarganegaraan</option>
+						<option value="id">Indonesia</option>
+					   	<option value="asing">Asing</option>
+				  	</select>
 				</div>
-				<div class="field">
-					<label for="wna.negara">Negara (Jika Warga Negara Asing)</label>
-				    <select class="ui search dropdown" name="wanita.wna.negara">
+				<div class="field" id="ayah-wanita-asing">
+					<label for="wna-negara">Negara (Jika Warga Negara Asing)</label>
+				    <select class="ui search dropdown" name="ayah-wanita-wna-negara">
 				      <option value="">Pilih Negara</option>
 				      <option value="AF">Afghanistan</option>
 				      <option value="AX">Åland Islands</option>
@@ -215,7 +206,7 @@
 				      <option value="PH">Philippines</option>
 				      <option value="PN">Pitcairn</option>
 				      <option value="PL">Poland</option>
-				      <option value="PT">Portugal</option>
+				      <option value="PT">Payahgal</option>
 				      <option value="PR">Puerto Rico</option>
 				      <option value="QA">Qatar</option>
 				      <option value="RE">Réunion</option>
@@ -291,7 +282,7 @@
 				</div>
 				<div class="field">
 					<label>Agama</label>
-					<select class="ui search dropdown" name="wanita.agama">
+					<select class="ui search dropdown" name="ayah-wanita-agama" id="ayah-wanita-pilih-agama">
 						<option value="">Pilih Agama</option>
 						<option value="islam">Islam</option>
 				    	<option value="protestan">Protestan</option>
@@ -302,13 +293,13 @@
 				      	<option value="kepercayaan">Penghayat Kepercayaan</option>
 					</select>
 				</div>
-				<div class="field">
+				<div class="field" id="ayah-wanita-kepercayaan">
 					<label>Nama Penghayat Kepercayaan</label>
-					<input type="text" name="wanita.kepercayaan" placeholder="Nama Penghayat Kepercayaan">
+					<input type="text" name="ayah-wanita-kepercayaan" placeholder="Nama Penghayat Kepercayaan">
 				</div>
 				<div class="field">
 					<label>Tempat tinggal</label>
-					<textarea rows="2" name="wanita.tmp_tinggal"></textarea>
+					<textarea rows="2" name="ayah-wanita-tmp_tinggal"></textarea>
 				</div>
 
 
@@ -316,42 +307,33 @@
 				<h5 class="ui horizontal divider">Data Ibu Mempelai Wanita</h5>
 				<div class="field">
 					<label>Nomor Kartu Tanda Penduduk</label>
-					<input type="text" name="wanita.ktp" placeholder="Nomor Kartu Tanda Penduduk">
+					<input type="text" name="ibu-wanita-ktp" placeholder="Nomor Kartu Tanda Penduduk">
 				</div>
 				<div class="field">
 					<label>Nama</label>
-					<input type="text" name="wanita.nama" placeholder="Nama">
+					<input type="text" name="ibu-wanita-nama" placeholder="Nama">
 				</div>
 				<div class="fields">
 					<div class="four wide field">
 						<label>Tempat Lahir</label>
-						<input type="text" name="wanita.tmp_lahir" placeholder="Tempat Lahir">
+						<input type="text" name="ibu-wanita-tmp_lahir" placeholder="Tempat Lahir">
 					</div>
 					<div class="twelve wide field ui calender" id="datepicker6">
 						<label>Tanggal Lahir</label>
-						<input type="text" name="wanita.tgl_lahir" placeholder="Tanggal Lahir">
+						<input type="text" name="ibu-wanita-tgl_lahir" placeholder="Tanggal Lahir">
 					</div>
 				</div>
 				<div class="field">
-					<label for="wanita.kewarganegaraan">Kewarganegaraan</label>
-					<div class="inline fields">
-					    <div class="field">
-					    	<div class="ui radio checkbox">
-					    		<input type="radio" name="wanita.wni" checked="" tabindex="0" class="hidden">
-					    		<label for="wni">Warga Negara Indonesia</label>
-					    	</div>
-					    </div>
-					    <div class="field">
-					    	<div class="ui radio checkbox">
-					    		<input type="radio" name="wanita.wna" tabindex="0" class="hidden">
-					    		<label for="wna">Warga Negara Asing</label>
-					    	</div>
-					    </div>
-					</div>
+					<label>Kewarganegaraan</label>
+					<select class="ui search dropdown" name="ibu-wanita-wn" id="ibu-wanita-pilih-wn">
+						<option value="">Kewarganegaraan</option>
+						<option value="id">Indonesia</option>
+					   	<option value="asing">Asing</option>
+				  	</select>
 				</div>
-				<div class="field">
-					<label for="wna.negara">Negara (Jika Warga Negara Asing)</label>
-				    <select class="ui search dropdown" name="wanita.wna.negara">
+				<div class="field" id="ibu-wanita-asing">
+					<label for="wna-negara">Negara (Jika Warga Negara Asing)</label>
+				    <select class="ui search dropdown" name="ibu-wanita-wna-negara">
 				      <option value="">Pilih Negara</option>
 				      <option value="AF">Afghanistan</option>
 				      <option value="AX">Åland Islands</option>
@@ -529,7 +511,7 @@
 				      <option value="PH">Philippines</option>
 				      <option value="PN">Pitcairn</option>
 				      <option value="PL">Poland</option>
-				      <option value="PT">Portugal</option>
+				      <option value="PT">Pibugal</option>
 				      <option value="PR">Puerto Rico</option>
 				      <option value="QA">Qatar</option>
 				      <option value="RE">Réunion</option>
@@ -605,7 +587,7 @@
 				</div>
 				<div class="field">
 					<label>Agama</label>
-					<select class="ui search dropdown" name="wanita.agama">
+					<select class="ui search dropdown" name="ibu-wanita-agama" id="ibu-wanita-pilih-agama">
 						<option value="">Pilih Agama</option>
 						<option value="islam">Islam</option>
 				    	<option value="protestan">Protestan</option>
@@ -616,11 +598,11 @@
 				      	<option value="kepercayaan">Penghayat Kepercayaan</option>
 					</select>
 				</div>
-				<div class="field">
+				<div class="field" id="ibu-wanita-kepercayaan">
 					<label>Nama Penghayat Kepercayaan</label>
-					<input type="text" name="wanita.kepercayaan" placeholder="Nama Penghayat Kepercayaan">
+					<input type="text" name="ibu-wanita-kepercayaan" placeholder="Nama Penghayat Kepercayaan">
 				</div>
 				<div class="field">
 					<label>Tempat tinggal</label>
-					<textarea rows="2" name="wanita.tmp_tinggal"></textarea>
+					<textarea rows="2" name="ibu-wanita-tmp_tinggal"></textarea>
 				</div>
