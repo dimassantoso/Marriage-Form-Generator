@@ -6,25 +6,25 @@
 							<h5 class="ui horizontal divider">Data Pribadi</h5>	
 							<div class="field">
 								<label>Nomor Kartu Tanda Penduduk</label>
-								<input type="text" name="saksi1.ktp" placeholder="Nomor Kartu Tanda Penduduk">
+								<input class="disenter" type="number" name="saksi1.ktp" placeholder="Nomor Kartu Tanda Penduduk">
 							</div>
 							<div class="field">
 								<label>Nama</label>
-								<input type="text" name="saksi1.nama" placeholder="Nama">
+								<input class="disenter" type="text" name="saksi1.nama" placeholder="Nama">
 							</div>
 							<div class="fields">
 								<div class="four wide field">
 									<label>Tempat Lahir</label>
-									<input type="text" name="saksi1.tmp_lahir" placeholder="Tempat Lahir">
+									<input class="disenter" type="text" name="saksi1.tmp_lahir" placeholder="Tempat Lahir">
 								</div>
 								<div class="twelve wide field ui calender" id="datepicker7">
 									<label>Tanggal Lahir</label>
-									<input type="text" name="saksi1.tgl_lahir" placeholder="Tanggal Lahir">
+									<input class="disenter" type="text" name="saksi1.tgl_lahir" placeholder="Tanggal Lahir">
 								</div>
 							</div>
 							<div class="field">
 								<label>Agama</label>
-								<select class="ui search dropdown" name="saksi1.agama" id="saksi1-pilih-agama">
+								<select class="ui search dropdown disenter" name="saksi1.agama" id="saksi1-pilih-agama">
 									<option value="">Pilih Agama</option>
 									<option value="islam">Islam</option>
 							    	<option value="protestan">Protestan</option>
@@ -37,11 +37,11 @@
 							</div>
 							<div class="field" id="saksi1-kepercayaan">
 								<label>Nama Penghayat Kepercayaan</label>
-								<input type="text" name="saksi1.kepercayaan" placeholder="Nama Penghayat Kepercayaan">
+								<input class="disenter" type="text" name="saksi1.kepercayaan" placeholder="Nama Penghayat Kepercayaan">
 							</div>
 							<div class="field">
 								<label>Tempat tinggal</label>
-								<textarea rows="2" name="saksi1.tmp_tinggal"></textarea>
+								<textarea rows="2" name="saksi1.tmp_tinggal" style="resize: none;"></textarea>
 							</div>
 					    </div>
 					    <div class="column">
@@ -49,25 +49,25 @@
 							<h5 class="ui horizontal divider">Data Pribadi</h5>	
 							<div class="field">
 								<label>Nomor Kartu Tanda Penduduk</label>
-								<input type="text" name="saksi2.ktp" placeholder="Nomor Kartu Tanda Penduduk">
+								<input class="disenter" type="number" name="saksi2.ktp" placeholder="Nomor Kartu Tanda Penduduk">
 							</div>
 							<div class="field">
 								<label>Nama</label>
-								<input type="text" name="saksi2.nama" placeholder="Nama">
+								<input class="disenter" type="text" name="saksi2.nama" placeholder="Nama">
 							</div>
 							<div class="fields">
 								<div class="four wide field">
 									<label>Tempat Lahir</label>
-									<input type="text" name="saksi2.tmp_lahir" placeholder="Tempat Lahir">
+									<input class="disenter" type="text" name="saksi2.tmp_lahir" placeholder="Tempat Lahir">
 								</div>
 								<div class="twelve wide field ui calender" id="datepicker8">
 									<label>Tanggal Lahir</label>
-									<input type="text" name="saksi2.tgl_lahir" placeholder="Tanggal Lahir">
+									<input class="disenter" type="text" name="saksi2.tgl_lahir" placeholder="Tanggal Lahir">
 								</div>
 							</div>
 							<div class="field">
 								<label>Agama</label>
-								<select class="ui search dropdown" name="saksi2.agama" id="saksi2-pilih-agama">
+								<select class="ui search dropdown disenter" name="saksi2.agama" id="saksi2-pilih-agama">
 									<option value="">Pilih Agama</option>
 									<option value="islam">Islam</option>
 							    	<option value="protestan">Protestan</option>
@@ -80,11 +80,11 @@
 							</div>
 							<div class="field" id="saksi2-kepercayaan">
 								<label>Nama Penghayat Kepercayaan</label>
-								<input type="text" name="saksi2.kepercayaan" placeholder="Nama Penghayat Kepercayaan">
+								<input class="disenter" type="text" name="saksi2.kepercayaan" placeholder="Nama Penghayat Kepercayaan">
 							</div>
 							<div class="field">
 								<label>Tempat tinggal</label>
-								<textarea rows="2" name="saksi2.tmp_tinggal"></textarea>
+								<textarea rows="2" name="saksi2.tmp_tinggal" style="resize: none;"></textarea>
 							</div>
 					    </div>
 					</div>

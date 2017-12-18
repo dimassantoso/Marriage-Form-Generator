@@ -13,6 +13,14 @@
 <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<style type="text/css">
+	input{
+		text-transform: capitalize;
+	}
+	textarea{
+		text-transform: capitalize;
+	}
+</style>
 </head>
 
 <body>
@@ -34,7 +42,7 @@
 		    Konfirmasi
 		  </div>
 		</div>
-		<form class="ui form" method="POST">
+		<form class="ui form" method="POST" action="save.php">
 			<div id="data-mempelai">
 				<div class="ui equal width grid segment">
 					<div class="equal width row">
@@ -46,7 +54,7 @@
 						</div>
 					</div>
 				</div>
-				<button class="fluid ui right labeled icon button positive large nextButton1">Selanjutnya<i class="right arrow icon"></i></button>
+				<button class="fluid ui right labeled icon button large nextButton1">Selanjutnya<i class="right arrow icon"></i></button>
 			</div>
 			<div id="data-ortu-mempelai">
 				<div class="ui equal width grid segment">
@@ -60,26 +68,26 @@
 					</div>
 				</div>
 				<div class="two ui buttons large">
-					<button class="ui left labeled icon button negative prevButton1">Kembali<i class="left arrow icon"></i></button>
-					<button class="ui right labeled icon button positive nextButton2">Selanjutnya<i class="right arrow icon"></i></button>
+					<button class="ui left labeled icon button prevButton1">Kembali<i class="left arrow icon"></i></button>
+					<button class="ui right labeled icon button nextButton2">Selanjutnya<i class="right arrow icon"></i></button>
 				</div>
 			</div>
 			<div id="data-saksi">
 				<?php include 'include/saksi.php'; ?>
 				<div class="two ui buttons large">
-					<button class="ui left labeled icon button negative prevButton2">Kembali<i class="left arrow icon"></i></button>
-					<button class="ui right labeled icon button positive nextButton3">Selanjutnya<i class="right arrow icon"></i></button>
+					<button class="ui left labeled icon button prevButton2">Kembali<i class="left arrow icon"></i></button>
+					<button class="ui right labeled icon button nextButton3">Selanjutnya<i class="right arrow icon"></i></button>
 				</div>
 			</div>
 			<div id="data-lain">
 				<?php include 'include/final.php'; ?>
 				<div class="two ui buttons large">
-					<button class="ui left labeled icon button negative prevButton3">Kembali<i class="left arrow icon"></i></button>
-					<button class="ui right labeled icon button positive nextButton4">Selanjutnya<i class="right arrow icon"></i></button>
+					<button class="ui left labeled icon button prevButton3">Kembali<i class="left arrow icon"></i></button>
+					<button class="ui right labeled icon button nextButton4">Selanjutnya<i class="right arrow icon"></i></button>
 				</div>
 			</div>
 			<div id="selesai">
-				<button class="fluid ui right labeled icon button positive large finishButton">Selesai, Cetak</button>
+				<button class="fluid ui right labeled icon button large finishButton" type="submit">Selesai, Cetak</button>
 			</div>
 		</form>
 	</div>
@@ -87,6 +95,10 @@
 </html>
 <script type="text/javascript">
 	$('select.dropdown').dropdown();
+
+	$('.ui.dropdown').dropdown({
+		allowAdditions: true
+	});
 
 	$('#datepicker1').calendar({
 		type: 'date'
@@ -119,7 +131,7 @@
 		$("#pria-pilih-wn").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih == "id" || pilih == ""){
+	            if(pilih == "Indonesia" || pilih == ""){
 	                $("#pria-asing").hide();
 	            } else{
 	                $("#pria-asing").show();
@@ -132,7 +144,7 @@
     	$("#pria-pilih-agama").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih != "kepercayaan"){
+	            if(pilih != "Kepercayaan"){
 	                $("#pria-kepercayaan").hide();
 	            } else{
 	                $("#pria-kepercayaan").show();
@@ -146,15 +158,15 @@
     	$("#pria-status").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih == "jejaka"){
+	            if(pilih == "Jejaka"){
 	                $('#pria-mantan').hide();
     				$('#pria-istri').hide();
 	            } 
-	            else if(pilih == "duda" ){
+	            else if(pilih == "Duda" ){
 	            	$('#pria-mantan').show();
 	            	$('#pria-istri').hide();
 	            }
-	            else if(pilih == "beristri"){
+	            else if(pilih == "Beristri"){
 	                $('#pria-istri').show();
 	                $('#pria-mantan').hide();
  	            }
@@ -167,7 +179,7 @@
 		$("#wanita-pilih-wn").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih == "id" || pilih == ""){
+	            if(pilih == "Indonesia" || pilih == ""){
 	                $("#wanita-asing").hide();
 	            } else{
 	                $("#wanita-asing").show();
@@ -180,7 +192,7 @@
      	$("#wanita-pilih-agama").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih != "kepercayaan"){
+	            if(pilih != "Kepercayaan"){
 	                $("#wanita-kepercayaan").hide();
 	            } else{
 	                $("#wanita-kepercayaan").show();
@@ -192,10 +204,10 @@
     	$("#wanita-status").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih == "perawan"){
+	            if(pilih == "Perawan"){
 	                $('#wanita-mantan').hide();
 	            } 
-	            else if(pilih == "janda" ){
+	            else if(pilih == "Janda" ){
 	            	$('#wanita-mantan').show();
 	            }
 	        });
@@ -206,7 +218,7 @@
 		$("#ayah-pria-pilih-wn").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih == "id" || pilih == ""){
+	            if(pilih == "Indonesia" || pilih == ""){
 	                $("#ayah-pria-asing").hide();
 	            } else{
 	                $("#ayah-pria-asing").show();
@@ -219,7 +231,7 @@
     	$("#ayah-pria-pilih-agama").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih != "kepercayaan"){
+	            if(pilih != "Kepercayaan"){
 	                $("#ayah-pria-kepercayaan").hide();
 	            } else{
 	                $("#ayah-pria-kepercayaan").show();
@@ -232,7 +244,7 @@
 		$("#ibu-pria-pilih-wn").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih == "id" || pilih == ""){
+	            if(pilih == "Indonesia" || pilih == ""){
 	                $("#ibu-pria-asing").hide();
 	            } else{
 	                $("#ibu-pria-asing").show();
@@ -245,7 +257,7 @@
     	$("#ibu-pria-pilih-agama").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih != "kepercayaan"){
+	            if(pilih != "Kepercayaan"){
 	                $("#ibu-pria-kepercayaan").hide();
 	            } else{
 	                $("#ibu-pria-kepercayaan").show();
@@ -258,7 +270,7 @@
 		$("#ayah-wanita-pilih-wn").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih == "id" || pilih == ""){
+	            if(pilih == "Indonesia" || pilih == ""){
 	                $("#ayah-wanita-asing").hide();
 	            } else{
 	                $("#ayah-wanita-asing").show();
@@ -271,7 +283,7 @@
     	$("#ayah-wanita-pilih-agama").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih != "kepercayaan"){
+	            if(pilih != "Kepercayaan"){
 	                $("#ayah-wanita-kepercayaan").hide();
 	            } else{
 	                $("#ayah-wanita-kepercayaan").show();
@@ -284,7 +296,7 @@
 		$("#ibu-wanita-pilih-wn").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih == "id" || pilih == ""){
+	            if(pilih == "Indonesia" || pilih == ""){
 	                $("#ibu-wanita-asing").hide();
 	            } else{
 	                $("#ibu-wanita-asing").show();
@@ -297,7 +309,7 @@
     	$("#ibu-wanita-pilih-agama").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih != "kepercayaan"){
+	            if(pilih != "Kepercayaan"){
 	                $("#ibu-wanita-kepercayaan").hide();
 	            } else{
 	                $("#ibu-wanita-kepercayaan").show();
@@ -310,7 +322,7 @@
     	$("#saksi1-pilih-agama").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih != "kepercayaan"){
+	            if(pilih != "Kepercayaan"){
 	                $("#saksi1-kepercayaan").hide();
 	            } else{
 	                $("#saksi1-kepercayaan").show();
@@ -323,7 +335,7 @@
     	$("#saksi2-pilih-agama").change(function(){
 	        $(this).find("option:selected").each(function(){
 	            var pilih = $(this).attr("value");
-	            if(pilih != "kepercayaan"){
+	            if(pilih != "Kepercayaan"){
 	                $("#saksi2-kepercayaan").hide();
 	            } else{
 	                $("#saksi2-kepercayaan").show();
@@ -332,4 +344,12 @@
     	}).change();
 
 	});
+	$('.disenter').on('keyup keypress', function(e) {
+	  var keyCode = e.keyCode || e.which;
+	  if (keyCode === 13) { 
+	    e.preventDefault();
+	    return false;
+	  }
+	});
+
 </script>
