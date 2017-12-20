@@ -20,10 +20,66 @@
 	textarea{
 		text-transform: capitalize;
 	}
+	select{
+		text-transform: capitalize;
+	}
 </style>
 </head>
 
 <body>
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			$('#propinsi').change(
+				function(){
+			    	load_combobox_kabkota($(this).val());
+			    });
+			$('#kabkota').change(
+				function(){
+			    	load_combobox_kec($(this).val());
+			});
+			$('#kecamatan').change(
+				function(){
+			    	load_combobox_deskel($(this).val());
+			    });
+			});
+
+			function  load_combobox_kabkota(val){
+				$.post("./load/kabkota.php", { 'propinsi' : val },
+			    function(data){
+			        var strbody = '<option value="">Kabupaten/Kota</option>';
+			        for(var i in data){
+			          	var nomor = i; nomor++;
+			           	strbody += "<option value='"+data[i].kota+"'>";
+			            strbody += data[i].kota+"</option>";
+			        }
+			        $('#kabkota').html(strbody);
+			    }, "json");
+			}
+			function  load_combobox_kec(val){
+				$.post("./load/kec.php", { 'kabkota' : val },
+			   	function(data){
+			       	var strbody = '<option value="">Kecamatan</option>';
+			        for(var i in data){
+			        	var nomor = i; nomor++;
+			            strbody += "<option value='"+data[i].kec+"'>";
+			            strbody += data[i].kec+"</option>";
+			        }
+			        $('#kecamatan').html(strbody);
+			    }, "json");
+			}
+			function  load_combobox_deskel(val){
+				$.post("./load/deskel.php", { 'kecamatan' : val },
+			 	function(data){
+			    	var strbody = '<option value="">Desa/Kelurahan</option>';
+			        for(var i in data){
+			        	var nomor = i; nomor++;
+			            strbody += "<option value='"+data[i].deskel+"'>";
+			            strbody += data[i].deskel+"</option>";
+			        }
+			        $('#deskel').html(strbody);
+			    }, "json");
+			}
+	</script>
 	<div class="ui container" style="margin-bottom: 10px;">
 		<div class="ui large five steps">
 		  <div class="ui active step" id="info-mempelai">
@@ -42,7 +98,7 @@
 		    Konfirmasi
 		  </div>
 		</div>
-		<form class="ui form" method="POST" action="save.php">
+		<form class="ui form form-nikah" method="POST" action="save.php">
 			<div id="data-mempelai">
 				<div class="ui equal width grid segment">
 					<div class="equal width row">
@@ -54,7 +110,8 @@
 						</div>
 					</div>
 				</div>
-				<button class="fluid ui right labeled icon button large nextButton1">Selanjutnya<i class="right arrow icon"></i></button>
+				<button  role="button" class="fluid ui right labeled icon button large nextButton1">Selanjutnya<i class="right arrow icon"></i></button>
+				<div class="ui error message"></div>
 			</div>
 			<div id="data-ortu-mempelai">
 				<div class="ui equal width grid segment">
@@ -71,6 +128,7 @@
 					<button class="ui left labeled icon button prevButton1">Kembali<i class="left arrow icon"></i></button>
 					<button class="ui right labeled icon button nextButton2">Selanjutnya<i class="right arrow icon"></i></button>
 				</div>
+				<div class="ui error message"></div>
 			</div>
 			<div id="data-saksi">
 				<?php include 'include/saksi.php'; ?>
@@ -124,9 +182,59 @@
 	$('#datepicker8').calendar({
 		type: 'date'
 	});
+	$('#datepicker9').calendar({
+		type: 'date'
+	});
+	$('#timepicker1').calendar({
+		ampm: false,
+		type: 'time'
+	});
 
-	//Mempelai Pria
+	
 	$(document).ready(function(){
+		$('#pilih_kabkota').hide();
+		$("#propinsi").change(function(){
+			$(this).find("option:selected").each(function(){
+			    var pilih = $(this).attr("value");
+			    if(pilih == ""){
+				    $("#pilih_kabkota").hide();
+				} 
+				else{
+				    $("#pilih_kabkota").show();
+				}
+			});
+		}).change();
+
+		$('#pilih_kec').hide();
+		$("#kabkota").change(function(){
+			$(this).find("option:selected").each(function(){
+			    var pilih = $(this).attr("value");
+			    if(pilih == ""){
+				    $("#pilih_kec").hide();
+				} 
+				else{
+				    $("#pilih_kec").show();
+				}
+			});
+		}).change();
+
+		$('#pilih_deskel').hide();
+		$("#kecamatan").change(function(){
+			$(this).find("option:selected").each(function(){
+			    var pilih = $(this).attr("value");
+			    if(pilih == ""){
+				    $("#pilih_deskel").hide();
+				} 
+				else{
+				    $("#pilih_deskel").show();
+				}
+			});
+		}).change();
+
+
+
+
+		//Mempelai Pria
 		$('#pria-asing').hide(); 
 		$("#pria-pilih-wn").change(function(){
 	        $(this).find("option:selected").each(function(){

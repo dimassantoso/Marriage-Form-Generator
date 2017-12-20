@@ -1,4 +1,11 @@
 $(document).ready(function(){
+	// $('.getStarted').one('click', function(x){
+	// 	x.preventDefault();
+	// 	$('#data-ortu-mempelai').animate('slow', function(){
+	// 		$('#data-ortu-mempelai').transition('hide');
+	// 		$('#data-mempelai').transition('fly right');
+	// 	});
+	// });
 	var i=0;
 	$('.nextButton1').one('click', function(x){
 		x.preventDefault();
