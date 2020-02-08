@@ -1,4 +1,4 @@
-# form_nikah
+# Marriage Form Generator
 Form Nikah Berbasis Web
 
 1. Install Node.js
